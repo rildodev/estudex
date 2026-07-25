@@ -1,0 +1,39 @@
+{
+  "entities": {
+    "User": {
+      "title": "User Profile",
+      "description": "Registered user account profile",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "displayName": { "type": "string" },
+        "email": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["uid", "displayName", "email"]
+    },
+    "UserData": {
+      "title": "User Study Data",
+      "description": "User edital verticalizado modules, subjects, topics, simulados, and study timer settings",
+      "type": "object",
+      "properties": {
+        "modules": { "type": "array" },
+        "simulados": { "type": "array" },
+        "timerSeconds": { "type": "number" },
+        "timerSubject": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["modules", "simulados"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/User" },
+      "description": "User profile document"
+    },
+    "/users/{userId}/estudexData/user_data": {
+      "schema": { "$ref": "#/entities/UserData" },
+      "description": "User specific modules, topics, questions, and simulados dataset"
+    }
+  }
+}

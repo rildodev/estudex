@@ -1,0 +1,6 @@
+{
+  "name": "EstudeX",
+  "description": "Plataforma de acompanhamento de estudos para concursos públicos com edital verticalizado, simulados, cronômetro e sincronização em tempo real via Firebase.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
